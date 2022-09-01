@@ -1,0 +1,104 @@
+$navigation-color: #ffe989;
+$line-color: #4f4f4f;
+$section-color: #004c8d;
+
+.navigation-container {
+  outline: 3px solid $line-color;
+  background-color: $navigation-color;
+
+  h2 {
+    padding: 10px;
+    outline: 3px solid $line-color;
+    color: $section-color;
+  }
+
+  @media screen and (min-width: 1000px) {
+    height: 100vh;
+    overflow-y: scroll;
+  }
+}
+
+.section {
+  span {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex-wrap: wrap;
+    
+    .section-text {
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        width: 70%;
+
+        @media screen and (max-width: 1000px) {
+          overflow:visible;
+          text-overflow:unset;
+          white-space:unset;
+          word-wrap: break-word;
+        }
+    }
+  }
+
+  border-bottom: 3px solid $line-color;
+  padding: 1rem 0.5rem;
+
+  .section-text {
+    margin-left: 1rem;
+    font-size: 17px;
+    color: $section-color;
+  }
+
+  .section-info {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    font-size: 15px;
+    font-weight: bold;
+    color: $line-color;
+    min-width: fit-content;
+
+    .video-completed {
+      display: flex;
+      min-width: fit-content;
+    }
+  }
+
+  .content {
+    display: none;
+    list-style: none;
+    margin-top: 1rem;
+    line-height: 1.2;
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      input {
+        margin-right: 1rem;
+      }
+
+      .lecture-length {
+        margin-left: auto;
+        margin-right: 1rem;
+        font-weight: bold;
+        min-width: fit-content;
+      }
+
+      .lecture {
+        transition: all 0.1s ease-in-out;
+        margin-right: 1rem;
+      }
+      &:hover .lecture {
+        color: rgb(0, 121, 97);
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .content.active {
+    display: block;
+  }
+}
